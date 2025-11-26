@@ -320,17 +320,36 @@
               <a href=""></a>
             </div>
       </div>
-<div class="contact-form">
-  <form action="">
-    <input type="" placeholder="Enter Your Name" required>
-    <input type="email" placeholder="Enter Your Mail" required>
-    <input type="" placeholder="Enter Your Subject">
-    <textarea name="" id="" cols="40" rows="10" placeholder="Enter  Your Message"></textarea>
-    <input type="submit" value="submit" class="send">
-  
+      <div class="contact-form">
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Enter Your Name" required>
+    <input type="email" name="email" placeholder="Enter Your Mail" required>
+    <input type="text" name="subject" placeholder="Enter Your Subject">
+    <textarea name="message" cols="40" rows="10" placeholder="Enter Your Message"></textarea>
+    <input type="submit" value="Submit" class="send">
   </form>
 
+  <p id="successMessage" style="display:none; color: #00c853; margin-top: 10px;">
+    ✅ Your response has been recorded!
+  </p>
 </div>
+
+
+<!-- <div class="contact-form">
+  <form id="contactForm">
+    <input type="text" placeholder="Enter Your Name" required>
+    <input type="email" placeholder="Enter Your Mail" required>
+    <input type="text" placeholder="Enter Your Subject">
+    <textarea cols="40" rows="10" placeholder="Enter Your Message"></textarea>
+    <input type="submit" value="submit" class="send">
+  </form>
+
+  
+  <p id="successMessage" style="display: none; color: #00c853; margin-top: 10px;">
+    ✅ Your response has been recorded!
+  </p>
+</div> -->
+
 
     </section>
     <a href="#" class="top"><i class='bx bx-up-arrow-alt'></i></a>
