@@ -1,7 +1,21 @@
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-// var typed = new Typed(".text", {
-//   strings: [""],
-//   typeSpeed: 90,
-//   backSpeed: 100,
-//   loop: true
-// });
+  const form = e.target;
+  const formData = new URLSearchParams(new FormData(form));
+
+  fetch("https://script.google.com/macros/s/AKfycbxDTOKEqUmgsvGmx3JKoFFPEGxJXUlNeTV-WkxtixD-KabeZsU8Qj3mSxW2A5UUomg/exec", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: formData
+  })
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("successMessage").style.display = "block";
+    form.reset();
+  })
+  .catch(err => {
+    alert("❌ Error! Please try again.");
+    console.error(err);
+  });
+});
