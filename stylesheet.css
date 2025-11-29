@@ -72,21 +72,83 @@ ul {
 
 /* ==================== HOME ==================== */
 .home {
-  display: flex;
+  position: relative;
   justify-content: space-between;
+  height: 100vh;
+  width: 100%;
+  background: #081b29;
+  background-size: cover;
+  background-position: center;
+  display: flex;
   align-items: center;
-  padding: 120px 40px 50px;
-  flex-wrap: wrap;
-  gap: 40px;
+  padding: 70px 10% 0;
 }
 
 .home-content {
   max-width: 600px;
 }
 
-.home-content h1 {
-  font-size: 50px;
+.home-content h3 {
+  font-size: 32px;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: .7s;
 }
+
+.home-content h3:nth-of-type(2) {
+  margin-bottom: 30px;
+  animation: slideTop 1s ease forwards;
+  animation-delay: .7s;
+}
+
+.home-content h3 span {
+  color: #0ef;
+}
+
+.home-content h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin: -3px 0;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.home-content p {
+  font-size: 20px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+
+/* ==================== SOCIAL ICONS ==================== */
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid #0ef;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #0ef;
+  text-decoration: none;
+  margin: 30px 15px 30px 0;
+  transition: 0.5s ease;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.home-sci a:hover {
+  background: #0ef;
+  color: #081b29;
+  box-shadow: 0 0 20px #0ef;
+}
+
+
 
 /* ==================== IMAGE FIX — ALWAYS FULL CIRCLE ==================== */
 .home-img,
