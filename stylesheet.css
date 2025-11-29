@@ -147,7 +147,29 @@ ul {
   color: #081b29;
   box-shadow: 0 0 20px #0ef;
 }
-
+.btn-box {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #0ef;
+  border-radius: 40px;
+  font-size: 16px;
+  color: #081b29;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  margin-top: 20px;
+  box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+} 
+.btn-box:hover {
+  box-shadow: 0 0 5px cyan,
+              0 0 25px cyan,
+              0 0 50px cyan,
+              0 0 100px cyan,
+              0 0 200px cyan;
+}
 
 
 /* ==================== IMAGE FIX — ALWAYS FULL CIRCLE ==================== */
@@ -166,6 +188,7 @@ ul {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.6);
 }
 
 /* ==================== ABOUT ==================== */
@@ -176,27 +199,7 @@ ul {
   flex-wrap: wrap;
 }
 
-/* ==================== PROJECTS FIX ==================== */
-.project-card {
-  background: #0a2c45;
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  width: 100%;
-}
 
-.project-card p {
-  font-size: 18px;
-  line-height: 1.5;
-  overflow-wrap: break-word;
-}
-
-.project-card i {
-  font-size: 28px;
-  color: #0ef;
-  margin-top: 10px;
-  display: inline-block;
-}
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
@@ -638,6 +641,84 @@ section {
 .next { right: 5px; }
 
 /* --- AI Chatbox Styles --- */
+/* ==================== FIX PROJECTS SECTION (your real classes) ==================== */
+
+.portfolio-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.row {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.row img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Full layer visible on mobile */
+.layer {
+  padding: 20px;
+  text-align: center;
+}
+
+.layer h5 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.layer p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  max-height: none;        /* Prevent cutting text */
+  overflow: visible;
+}
+
+.layer i {
+  font-size: 30px;
+  width: 55px;
+  height: 55px;
+  background: white;
+  color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----------- MOBILE FIX ------------- */
+@media (max-width: 500px) {
+
+  .portfolio-content {
+    grid-template-columns: 1fr;
+  }
+
+  .row img {
+    height: 220px;
+  }
+
+  .layer {
+    height: auto !important;
+    opacity: 1 !important;
+  }
+
+  .row:hover img {
+    transform: none;
+  }
+
+  .row:hover .layer {
+    height: auto;
+    opacity: 1;
+  }
+}
 
 
 /* ==================== CONTACT SECTION ==================== */
