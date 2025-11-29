@@ -19,3 +19,14 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     console.error(err);
   });
 });
+
+
+  let menuIcon = document.getElementById("menu-icon");
+  let navbar = document.getElementById("navbar");
+
+  menuIcon.onclick = () => {
+      navbar.classList.toggle("active");
+  };
+
+
+
