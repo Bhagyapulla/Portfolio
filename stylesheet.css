@@ -3,13 +3,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-family: 'Poppins', sans-serif;
 }
 
 body {
   color: #ededed;
   background: #081b29;
-  line-height: 1.5;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
 }
 
 /* ==================== HEADER ==================== */
@@ -18,12 +27,12 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 10%;
+  padding: 15px 100px;
   background: #081b29;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .logo {
@@ -45,6 +54,8 @@ body {
   font-weight: 500;
   margin-left: 35px;
   transition: 0.3s;
+  padding: 10px 20px;
+  position: relative;
   opacity: 0;
   animation: slideTop .5s ease forwards;
   animation-delay: calc(.25s * var(--i));
@@ -65,15 +76,17 @@ body {
   background-position: center;
   display: flex;
   align-items: center;
-  padding: 70px 10% 0;
+  padding: 120px 100px 50px;
+  flex-wrap: wrap;
 }
 
 .home-content {
-  max-width: 500px;
+  max-width: 600px;
 }
 
 .home-content h3 {
-  font-size: 32px;
+  font-size: 1.5rem;
+  margin: 10px 0;
   font-weight: 600;
   opacity: 0;
   animation: slideBottom 1s ease forwards;
@@ -100,6 +113,7 @@ body {
 }
 
 .home-content p {
+  margin: 20px 0;
   font-size: 20px;
   opacity: 0;
   animation: slideLeft 1s ease forwards;
@@ -135,16 +149,17 @@ body {
 /* ==================== BUTTONS ==================== */
 .btn-box {
   display: inline-block;
-  padding: 12px 28px;
-  background: #0ef;
-  border-radius: 40px;
+  padding: 10px 25px;
+  background: #00eeff;
+  border-radius: 50px;
   font-size: 16px;
-  color: #081b29;
+  color: #111;
   letter-spacing: 1px;
   text-decoration: none;
   font-weight: 600;
   opacity: 0;
-  margin-top: 20px;
+  transition: 0.3s;
+  margin-top: 10px;
   box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
   animation: slideTop 1s ease forwards;
   animation-delay: 2s;
@@ -160,17 +175,20 @@ body {
 
 /* ==================== ABOUT SECTION ==================== */
 .about {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1.5rem;
+  padding: 100px;
+  justify-content: space-between;
+
 }
 
 .home-img,
 .about-img {
   width: 300px;
   height: 300px;
-  border-radius: 50%;
+  border-radius: 10%;
   overflow: hidden;
   border: 5px solid #0ef;
   box-shadow: 0 0 20px rgba(0, 238, 255, 0.6);
@@ -180,13 +198,18 @@ body {
 .about-img img {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   object-fit: cover;
 }
 
 /* ==================== HEADINGS ==================== */
+#skills{
+  padding: 100px 50px;
+}
+
 .main-heading {
   text-align: center;
-  font-size: 40px;
+  font-size: 2.5rem;
   margin-bottom: 50px;
   color: #fff;
 }
@@ -238,6 +261,7 @@ body {
   gap: 10px;
   color: #fff;
   font-size: 18px;
+  font-weight: 500;
 }
 
 .progress-line {
@@ -294,6 +318,7 @@ body {
 }
 
 .radial-bars {
+  display: inline-block;
   width: 130px;
   height: 160px;
   position: relative;
@@ -304,6 +329,8 @@ body {
   width: 160px;
   height: 160px;
   transform: rotate(-90deg);
+  fill: none;
+  
 }
 
 .radial-bars .progress-bar {
@@ -415,7 +442,7 @@ section {
 
 /* ==================== PORTFOLIO SECTION ==================== */
 #Portfolio {
-  padding: 80px 10%;
+  padding: 100px 50%;
   background-color: #081b29;
 }
 
@@ -442,6 +469,7 @@ section {
   border-radius: 8px;
   transition: transform 0.5s ease;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 .row img {
@@ -461,7 +489,7 @@ section {
   height: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.1), #0ef);
   position: absolute;
-  border-radius: 8px;
+  border-radius: 10px;
   left: 0;
   bottom: 0;
   overflow: hidden;
@@ -470,7 +498,7 @@ section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 0 40px;
+  padding: 0 20px;
   opacity: 0;
   transition: height 0.5s ease, opacity 0.3s ease;
 }
@@ -642,14 +670,14 @@ section {
 .contact-form form textarea {
   border: none;
   outline: none;
-  width: 90%;
-  padding: 18px;
+  width: 100%;
+  padding: 10px;
   background: #555557;
   color: #000;
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  border-radius: 0.5rem;
+  border-radius: 5px;
 }
 
 .contact-form textarea {
@@ -722,3 +750,131 @@ section {
   100% { transform: translateX(0); opacity: 1; }
 }
 
+/* ==================== MOBILE HEADER FIX ==================== */
+
+.menu-icon {
+  display: none;
+  font-size: 32px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* For tablets & mobiles */
+@media (max-width: 1200px) {
+  .header {
+    padding: 15px 50px;
+  }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 150px;
+  }
+
+  .home-img img {
+    width: 300px;
+    margin-top: 30px;
+  }
+
+  .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    margin: 20px 0 0 0;
+  }
+
+  .services-list div {
+    flex: 0 0 100%;
+  }
+
+  .contact {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-form {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 250px;
+    height: 100%;
+    background: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+    transition: 0.3s;
+  }
+
+  .navbar.active {
+    right: 0;
+  }
+
+  .navbar a {
+    padding: 15px 30px;
+    width: 100%;
+  }
+
+  .home-content h2 {
+    font-size: 2.2rem;
+  }
+
+  .home-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .home-img img {
+    width: 250px;
+  }
+
+  #skills {
+    padding: 50px 20px;
+  }
+
+  #services {
+    padding: 50px 20px;
+  }
+
+  #projects {
+    padding: 50px 20px;
+  }
+
+  .projects .row .layer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .home-content h3 {
+    font-size: 1rem;
+  }
+
+  .home-img img {
+    width: 200px;
+  }
+
+  .about-img img {
+    width: 250px;
+  }
+}
