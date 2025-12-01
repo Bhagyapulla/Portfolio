@@ -27,6 +27,12 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   menuIcon.onclick = () => {
       navbar.classList.toggle("active");
   };
+// Close menu when clicking any nav link
+document.querySelectorAll(".navbar a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navbar").classList.remove("active");
+    });
+});
 
 
 
