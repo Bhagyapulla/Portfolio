@@ -14,31 +14,32 @@
 <body>
 
   
-  <header class="header">
-    <a href="#" class="logo">Portfolio</a>
-     <div class="menu-icon" id="menu-icon">
-        ☰
-    </div>
-    <nav class="navbar">
-      <a href="#home" style="--i:1" class="active">Home</a>
-      <a href="#about" style="--i:2">About</a>
-      <a href="#skills" style="--i:3">Skills</a>
-      <a href="#services" style="--i:4">Services</a>
-      <a href="#projects" style="--i:5">Projects</a>
-      <a href="#contact" style="--i:6">Contact</a>
-        <!-- <a href="{% url 'chat_page' %}" style="--i:7">AI Chatbot</a> -->
-      <a href="https://backend-portfolio-1-2nuq.onrender.com/chat/" id="chatbotBtn" style="--i:7">AI Assistance</a>
+<header>
+  <div class="logo">Portfolio</div>
 
-    </nav>
-  </header>
+  <div class="menu-icon" id="menu-icon">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <ul class="navbar" id="navbar">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <a href="https://backend-portfolio-1-2nuq.onrender.com/chat/" id="chatbotBtn" style="--i:7">AI Assistance</a>
+
+  </ul>
+</header>
+
 
   <main>
     
-    <section class="#home">
+    <section id="home" class="home">
       <div class="home-content">
-        <h3>Hi,  I am</h3>
-        <h2>Bhagya Lakshmi</h2>
-        <h3>And I'm a <span class="text"> Python Full-stack Developer</span></h3>
+        <h2>Hi,  I am</h2>
+        <h3>Bhagya Lakshmi</h3>
+        <h2>And I'm a <span class="text"> Python Full-stack Developer</span></h2>
         <p>
           I'm a Python Full-Stack Developer focused on building clean, responsive, and scalable web applications—from crafting intuitive UI to developing powerful backend systems and APIs
         </p>
@@ -70,9 +71,11 @@
         <h4> Python Full-Stack Developer</h4>
         
         <p>I'm a dedicated and passionate developer with a strong
-           interest in building full-stack applications. I enjoy working across both frontend and backend 
+           interest in building full-stack applications. 
+           I enjoy working across both frontend and backend 
            technologies, and I love solving real-world problems through clean, efficient code.</p><br>
-           <p>Right now, I am actively looking for a role where I can apply my skills, grow as a developer, and contribute to a collaborative team environment.
+           <p>Right now, I am actively looking for a role where I can apply my skills, grow as a developer,
+             and contribute to a collaborative team environment.
              I am eager to take on new challenges, learn from experienced
               professionals, and deliver meaningful results that make a difference.</p>
         <a href="#skills" class="btn-box">Skills</a>
@@ -89,7 +92,8 @@
         <div class="bar">
           <div class="info">
             <i class="fa-brands fa-python" style="color:#3776AB;"></i> Python
-            <span class="percent">90%</span>
+           <div class="percent"></div>
+
           </div>
           <div class="progress-line python"><span></span></div>
         </div>
@@ -97,7 +101,8 @@
         <div class="bar">
           <div class="info">
             <i class="fa-solid fa-leaf" style="color:#0C4B33;"></i> Django
-            <span class="percent">80%</span>
+            <div class="percent"></div>
+
           </div>
           <div class="progress-line django"><span></span></div>
         </div>
@@ -105,7 +110,8 @@
         <div class="bar">
           <div class="info">
             <i class="fa-solid fa-database" style="color:#f29111;"></i> SQL
-            <span class="percent">85%</span>
+            <div class="percent"></div>
+
           </div>
           <div class="progress-line sql"><span></span></div>
         </div>
@@ -113,7 +119,8 @@
         <div class="bar">
           <div class="info">
             <i class="fa-brands fa-js" style="color:#F7DF1E;"></i> JavaScript
-            <span class="percent">80%</span>
+          <div class="percent"></div>
+
           </div>
           <div class="progress-line javascript"><span></span></div>
         </div>
@@ -121,7 +128,7 @@
         <div class="bar">
           <div class="info">
             <i class="fa-brands fa-react" style="color:#61DBFB;"></i> React
-            <span class="percent">75%</span>
+            <span class="percent"></span>
           </div>
           <div class="progress-line react"><span></span></div>
         </div>
@@ -129,7 +136,8 @@
         <div class="bar">
           <div class="info">
             <i class="fa-brands fa-css3-alt" style="color:#2965f1;"></i> CSS
-            <span class="percent">90%</span>
+            <div class="percent"></div>
+
           </div>
           <div class="progress-line css"><span></span></div>
         </div>
@@ -137,7 +145,8 @@
         <div class="bar">
           <div class="info">
             <i class="fa-brands fa-html5" style="color:#E34C26;"></i> HTML
-            <span class="percent">95%</span>
+            <div class="percent"></div>
+
           </div>
           <div class="progress-line html"><span></span></div>
         </div>
@@ -146,44 +155,50 @@
     </div>
   </div>
 </section>
-    <div class="container">
-      <h3 class="heading1">Professional Skills</h3>
-      <div class="professional">
-        <div class="radial-bars">
-          <svg>
-            <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
-            <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:90;"></circle>
-          </svg>
-          <div class="percentage">90%</div>
-          <div class="text">Creativity</div>
-        </div>
-        <div class="radial-bars">
-          <svg>
-            <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
-            <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:85;"></circle>
-          </svg>
-          <div class="percentage">85%</div>
-          <div class="text">Communication</div>
-        </div>
-        <div class="radial-bars">
-          <svg>
-            <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
-            <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:80;"></circle>
-          </svg>
-          <div class="percentage">80%</div>
-          <div class="text">Problem Solving</div>
-        </div>
-        <div class="radial-bars">
-          <svg>
-            <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
-            <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:75;"></circle>
-          </svg>
-          <div class="percentage">90%</div>
-          <div class="text">Teamwork</div>
-        </div>
-      </div>
+<div class="container">
+  <h3 class="heading1">Professional Skills</h3>
+  <div class="professional">
+
+    <div class="radial-bars">
+      <div class="text">Creativity</div>
+      <svg>
+        <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
+        <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:90;"></circle>
+      </svg>
+      
     </div>
+
+    <div class="radial-bars">
+      <div class="text">Communication</div>
+      <svg>
+        <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
+        <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:85;"></circle>
+      </svg>
+      
+    </div>
+
+    <div class="radial-bars">
+      <div class="text">Problem Solving</div>
+      <svg>
+        <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
+        <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:80;"></circle>
+      </svg>
+      
+    </div>
+
+    <div class="radial-bars">
+        <div class="text">Teamwork</div>
+      <svg>
+        <circle class="progress-bar" cx="80" cy="80" r="70"></circle>
+        <circle class="progress-bar" cx="80" cy="80" r="70" style="--percent:75;"></circle>
+      </svg>
+    
+    </div>
+
   </div>
+</div>
+
+
    <a href="#services" class="btn-box">Services</a>
 </section>
  <section id="services">
