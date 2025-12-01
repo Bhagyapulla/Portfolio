@@ -173,7 +173,7 @@ ul {
 
 
 /* ==================== IMAGE FIX — ALWAYS FULL CIRCLE ==================== */
-.home-img,
+ .home-img,
 .about-img {
   width: 280px;
   height: 280px;
@@ -230,30 +230,38 @@ ul {
 }
 
 /* ---- Mobile Phones ---- */
-@media (max-width: 600px) {
+/* ==================== RESPONSIVE FIXES ==================== */
+@media (max-width: 768px) {
 
-  /* Menu spacing */
-  .navbar a {
-    font-size: 40px;
-    margin: 18px 0;
-  }
-
-  /* Fix double image issue */
+  /* Fix home layout */
   .home {
-    flex-direction: column;
+    flex-direction: column-reverse;
     text-align: center;
-    padding: 100px 20px 40px;
+    padding: 120px 20px 40px;
   }
 
   .home-img {
-    /* width: 200px !important;
-    height: 200px !important; */
-    margin-top: 20px;
     width: 180px;
     height: 180px;
+    margin: 0 auto 20px;
   }
 
-  /* About image fix */
+  .home-img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0ef;
+  }
+
+  .home-content h1, 
+  .home-content h2, 
+  .home-content h3, 
+  .home-content p {
+    text-align: center;
+  }
+
+  /* Fix About layout */
   .about {
     flex-direction: column;
     text-align: center;
@@ -263,18 +271,19 @@ ul {
   .about-img {
     width: 180px;
     height: 180px;
+    margin-bottom: 20px;
   }
 
-  /* Prevent image overflow */
-  .home-img img,
   .about-img img {
-    object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 10%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #0ef;
   }
+}
 
-  /* Project layer text full visible */
+
   .layer {
     padding: 20px;
     height: auto !important;
@@ -291,7 +300,74 @@ ul {
     width: 30px;
     height: 30px;
   }
+  /* ================= HEADER ================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 40px;
+  background: #081b29;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
+
+/* MENU ICON */
+.menu-icon {
+  display: none;   /* Hidden on laptop */
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.menu-icon i {
+  font-size: 30px;
+  color: #fff;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.navbar a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+/* ================= MOBILE MENU ================= */
+@media (max-width: 768px) {
+
+  .menu-icon {
+    display: block;        /* SHOW HAMBURGER */
+  }
+
+  .navbar {
+    display: none;         /* HIDE MENU INITIALLY */
+    flex-direction: column;
+    background: #081b29;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    text-align: center;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .navbar.active {
+    display: flex;         /* SHOW MENU WHEN ACTIVE */
+  }
+}
+
 
 
 
@@ -691,6 +767,7 @@ section {
 .next { right: 5px; }
 
 /* --- AI Chatbox Styles --- */
+
 /* ==================== FIX PROJECTS SECTION (your real classes) ==================== */
 
 .portfolio-content {
@@ -727,8 +804,8 @@ section {
 }
 
 .layer p {
-    color: #000;
-  font-size: 16px;
+  color: #000;
+  font-size: 14px;
   line-height: 1.4;
   margin-bottom: 10px;
   max-height: none;        /* Prevent cutting text */
@@ -756,11 +833,22 @@ section {
 
   .row img {
     height: 220px;
+    object-fit: cover;
   }
 
   .layer {
+    position: relative;
     height: auto !important;
     opacity: 1 !important;
+    padding: 20px;
+    overflow: visible;
+  }
+  .layer p {
+    max-height: none !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    line-height: 1.5;
+    font-size: 14px;
   }
 
   .row:hover img {
